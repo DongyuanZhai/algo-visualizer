@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm Visualizer</title>
+  <meta name="description" content="Watch sorting algorithms work, one step at a time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Algorithm Visualizer</h1>
+      <p class="sub">Watch sorting algorithms work, one step at a time.</p>
+    </header>
+
+    <section class="controls">
+      <label>Algorithm
+        <select id="algo">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+        </select>
+      </label>
+      <label>Speed
+        <input id="speed" type="range" min="1" max="100" value="50">
+      </label>
+      <div class="buttons">
+        <button id="shuffle">New Array</button>
+        <button id="prev" title="Step back (Left arrow)">&lsaquo; Step</button>
+        <button id="play" class="primary" title="Play or pause (Space)">Play</button>
+        <button id="next" title="Step forward (Right arrow)">Step &rsaquo;</button>
+      </div>
+    </section>
+
+    <div id="bars" class="bars"></div>
+
+    <p id="caption" class="caption" aria-live="polite">Press Play to start.</p>
+
+    <section class="stats">
+      <div><span id="comparisons">0</span> comparisons</div>
+      <div><span id="writes">0</span> array writes</div>
+      <div>step <span id="stepNum">0</span> of <span id="stepTotal">0</span></div>
+    </section>
+
+    <section class="legend">
+      <span><i class="dot compare"></i>Comparing</span>
+      <span><i class="dot swap"></i>Swapping</span>
+      <span><i class="dot sorted"></i>In final position</span>
+    </section>
+
+    <footer>
+      <a href="https://dongyuanzhai.github.io">&larr; Back to homepage</a>
+    </footer>
+  </main>
+
+  <script src="algorithms.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
